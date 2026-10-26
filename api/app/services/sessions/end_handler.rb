@@ -34,7 +34,7 @@ module Sessions
         )
 
         # An error before the candidate said anything is a system failure, not an interview to assess.
-        create_portfolio unless reason.to_s == 'error' && @session.transcript_turns.where(speaker: 'candidate').none?
+        create_portfolio
       end
 
       enqueue_portfolio_generation
